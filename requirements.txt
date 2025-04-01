@@ -1,0 +1,5 @@
+Flask
+gunicorn
+serverless-wsgi
+Werkzeug
+markupsafe
