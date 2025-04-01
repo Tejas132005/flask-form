@@ -1,5 +1,4 @@
 Flask
 gunicorn
-serverless-wsgi
-Werkzeug
+werkzeug
 markupsafe
