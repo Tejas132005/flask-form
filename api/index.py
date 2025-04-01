@@ -12,18 +12,15 @@ def index():
         city = request.form.get('city')
         state = request.form.get('state')
         country = request.form.get('country')
-        
+
         return render_template('form_result.html',
-                               username = escape(username),
+                               username=escape(username),
                                city=escape(city),
-                               state = escape(state),
-                               country = escape(country))
-    
+                               state=escape(state),
+                               country=escape(country))
+
     return render_template('form.html')
+
 
 def handler(event, context):
     return handle_request(app, event, context)
-
-
-if __name__ == "__main__":
-    app.run(debug = True, port=7000)
