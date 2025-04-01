@@ -1,5 +1,7 @@
 from flask import Flask, render_template, request
 from markupsafe import escape
+from werkzeug.middleware.dispatcher import DispatcherMiddleware
+from serverless_wsgi import handle_request
 
 app = Flask(__name__)
 
@@ -18,6 +20,9 @@ def index():
                                country = escape(country))
     
     return render_template('form.html')
+
+def handler(event, context):
+    return handle_request(app, event, context)
 
 
 if __name__ == "__main__":
